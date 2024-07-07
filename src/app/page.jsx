@@ -5,13 +5,21 @@ import React from "react";
 import { BsArrowRepeat } from "react-icons/bs";
 import { GrFormNextLink } from "react-icons/gr";
 
-import { RootContext, RootProvider } from "@/context/RootContext";
+import { RootContext } from "@/context/RootContext";
 
 export default function Home() {
   const { timer, startTimer, pauseTimer } = React.useContext(RootContext);
 
   const [pause, setPause] = React.useState(false);
 
+  const handleTimer = () => {
+    if (pause === true) {
+      pauseTimer();
+    } else if (pause === false) {
+      startTimer();
+    }
+    setPause(!pause);
+  };
   return (
     <>
       <div className="skeleton">
@@ -24,12 +32,8 @@ export default function Home() {
                 <div className="content__icon">
                   <BsArrowRepeat fontSize={30} />
                 </div>
-                <div className="content__start">
-                  {pause ? (
-                    <span onClick={startTimer}>Start</span>
-                  ) : (
-                    <span onClick={pauseTimer}>Pause</span>
-                  )}
+                <div className="content__start" onClick={handleTimer}>
+                  <span>{pause ? "Pause" : "Start"}</span>
                 </div>
                 <div className="content__icon">
                   <GrFormNextLink fontSize={40} />
