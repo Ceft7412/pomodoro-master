@@ -6,9 +6,11 @@
     display: flex;
     gap: 20px;
     .menu__item {
-      padding: 7px 13px;
-
+      padding: 7px 0;
       transition: background 0.4s;
+      &.active {
+        border-bottom: 2px solid #f06565;
+      }
       &:hover h1 {
         color: #f06565;
       }
