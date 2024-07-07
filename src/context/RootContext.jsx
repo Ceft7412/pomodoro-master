@@ -12,13 +12,18 @@ const RootProvider = ({ children }) => {
     longbreak: false,
   });
 
-  console.log(active);
   let interval = React.useRef(null);
 
   const startTimer = () => {
     interval.current = setInterval(() => {
       setTimer((prevTime) => prevTime - 1);
     }, 1000);
+
+    if (timer === 0) {
+      clearInterval(interval.current);
+      interval.current = null;
+      setTimer(choseTimer);
+    }
   };
 
   const pauseTimer = () => {
