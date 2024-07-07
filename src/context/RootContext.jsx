@@ -11,13 +11,11 @@ const RootProvider = ({ children }) => {
     shortbreak: false,
     longbreak: false,
   });
+
+  console.log(active);
   let interval = React.useRef(null);
 
   const startTimer = () => {
-    if (interval.current !== null) {
-      clearInterval(interval.current);
-    }
-
     interval.current = setInterval(() => {
       setTimer((prevTime) => prevTime - 1);
     }, 1000);
@@ -38,6 +36,21 @@ const RootProvider = ({ children }) => {
   const displayTimer = `${Math.floor(timer / 60) < 10 ? "0" : ""}${Math.floor(
     timer / 60
   )}:${timer % 60 < 10 ? "0" : ""}${timer % 60}`;
+
+  const handleClick = (newState) => {
+    setActive((prevActive) => {
+      // Create a new object with all states set to false
+      const newStateObject = Object.keys(prevActive).reduce((acc, key) => {
+        acc[key] = false;
+        return acc;
+      }, {});
+
+      // Set the newState to true
+      newStateObject[newState] = true;
+
+      return newStateObject;
+    });
+  };
   return (
     <RootContext.Provider
       value={{
@@ -47,6 +60,7 @@ const RootProvider = ({ children }) => {
         startTimer,
         pauseTimer,
         clearTimer,
+        handleClick,
       }}
     >
       {children}
