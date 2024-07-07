@@ -10,7 +10,7 @@ import { RootContext, RootProvider } from "@/context/RootContext";
 export default function Home() {
   const { timer, startTimer, pauseTimer } = React.useContext(RootContext);
 
-  const 
+  const [pause, setPause] = React.useState(false);
 
   return (
     <>
