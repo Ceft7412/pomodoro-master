@@ -1,7 +1,16 @@
 .content {
-  text-align: center;
-  color: white;
-  font-size: 130px;
-  font-weight: lighter;
-  letter-spacing: 20px;
+  display: flex;
+  flex-direction: column;
+  .content__timer {
+    text-align: center;
+    color: white;
+    font-size: 130px;
+    font-weight: lighter;
+    letter-spacing: 20px;
+  }
+  .content__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
