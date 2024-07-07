@@ -8,7 +8,9 @@ import { GrFormNextLink } from "react-icons/gr";
 import { RootContext, RootProvider } from "@/context/RootContext";
 
 export default function Home() {
-  const { timer } = React.useContext(RootContext);
+  const { timer, startTimer, pauseTimer } = React.useContext(RootContext);
+
+  const 
 
   return (
     <>
@@ -22,7 +24,10 @@ export default function Home() {
                 <div className="content__icon">
                   <BsArrowRepeat fontSize={30} />
                 </div>
-                <span className="content__start">Start</span>
+                <div className="content__start">
+                  <span onClick={startTimer}>Start</span>
+                  <span onClick={pauseTimer}>Pause</span>
+                </div>
                 <div className="content__icon">
                   <GrFormNextLink fontSize={40} />
                 </div>
