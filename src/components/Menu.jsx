@@ -1,6 +1,6 @@
 import React from "react";
 import { RootContext } from "@/context/RootContext";
-import { VscSettings } from "react-icons/vsc";
+
 
 export default function Menu() {
   const { active, handleClick } = React.useContext(RootContext);
@@ -27,9 +27,7 @@ export default function Menu() {
           >
             <h1>Long Break</h1>
           </div>
-          <div className="menu-icon">
-            <VscSettings />
-          </div>
+         
         </div>
       </div>
     </>
