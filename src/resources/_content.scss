@@ -14,13 +14,15 @@
     height: 50%;
     gap: 10px;
     .content__timer {
-      text-align: center;
       color: white;
       font-size: 130px;
       font-weight: bold;
       letter-spacing: 5px;
       margin-top: 80px;
       font-family: "Roboto Mono", monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .content__flex {
       display: flex;
@@ -28,14 +30,16 @@
       margin-top: 30px;
       width: 350px;
       justify-content: space-between;
-      .content__start {
-        font-size: 25px;
-        letter-spacing: 3px;
+      .content__events {
         transition: font-size 0.5s ease, color 0.3s ease;
         cursor: pointer;
         &:hover {
           color: #f06565;
         }
+      }
+      .content__start {
+        font-size: 25px;
+        letter-spacing: 3px;
         &:active {
           font-size: 28px;
         }
