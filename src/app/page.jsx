@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <div className="skeleton">
-        <div className  ="background">
+        <div className="background">
           <Menu />
           <div className="content">
             <div className="content__flex-col">
