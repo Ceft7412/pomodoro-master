@@ -4,7 +4,7 @@ import Menu from "@/components/Menu";
 import React from "react";
 import { BsArrowRepeat } from "react-icons/bs";
 import { GrFormNextLink } from "react-icons/gr";
-
+import { VscSettings } from "react-icons/vsc";
 import { RootContext } from "@/context/RootContext";
 
 export default function Home() {
@@ -54,6 +54,10 @@ export default function Home() {
     <>
       <div className="skeleton">
         <div className="background">
+          <div className="background__settings-icon">
+            <VscSettings fontSize={25} />
+          </div>
+
           <Menu />
           <div className="content">
             <div className="content__flex-col">
