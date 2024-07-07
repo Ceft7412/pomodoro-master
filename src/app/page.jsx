@@ -13,9 +13,9 @@ export default function Home() {
   return (
     <>
       <div className="skeleton">
-        <div class="background">
+        <div className  ="background">
           <Menu />
-          <div class="content">
+          <div className="content">
             <div className="content__flex-col">
               <p className="content__timer">{timer}</p>
               <div className="content__flex">
