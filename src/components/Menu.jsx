@@ -1,21 +1,8 @@
 import React from "react";
 import { RootContext } from "@/context/RootContext";
 export default function Menu() {
-  const { active, setActive } = React.useContext(RootContext);
-  const handleClick = (newState) => {
-    setActive((prevActive) => {
-      // Create a new object with all states set to false
-      const newStateObject = Object.keys(prevActive).reduce((acc, key) => {
-        acc[key] = false;
-        return acc;
-      }, {});
+  const { active, handleClick } = React.useContext(RootContext);
 
-      // Set the newState to true
-      newStateObject[newState] = true;
-
-      return newStateObject;
-    });
-  };
   return (
     <>
       <div className="menu">
