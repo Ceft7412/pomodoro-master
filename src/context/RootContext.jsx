@@ -6,7 +6,11 @@ const RootContext = React.createContext();
 const RootProvider = ({ children }) => {
   const choseTimer = 1500;
   const [timer, setTimer] = React.useState(choseTimer);
-  const [active, setActive] = React.useState("pomodoro");
+  const [active, setActive] = React.useState({
+    pomodoro: true,
+    shortbreak: false,
+    longbreak: false,
+  });
   let interval = React.useRef(null);
 
   const startTimer = () => {
