@@ -4,7 +4,8 @@ import React from "react";
 const RootContext = React.createContext();
 
 const RootProvider = ({ children }) => {
-  const [timer, setTimer] = React.useState(1500);
+  const choseTimer = 1500;
+  const [timer, setTimer] = React.useState(choseTimer);
 
   let interval = React.useRef(null);
 
@@ -23,6 +24,12 @@ const RootProvider = ({ children }) => {
       clearInterval(interval.current);
       interval.current = null;
     }
+  };
+
+  const clearTimer = () => {
+    clearInterval(interval.current);
+    interval.current = null;
+    setTimer(1500);
   };
   const displayTimer = `${Math.floor(timer / 60) < 10 ? "0" : ""}${Math.floor(
     timer / 60
