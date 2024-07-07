@@ -8,7 +8,7 @@ import { GrFormNextLink } from "react-icons/gr";
 import { RootContext } from "@/context/RootContext";
 
 export default function Home() {
-  const { timer, startTimer, pauseTimer } = React.useContext(RootContext);
+  const { timer, startTimer, pauseTimer, clearTimer } = React.useContext(RootContext);
 
   const [pause, setPause] = React.useState(false);
 
@@ -20,6 +20,11 @@ export default function Home() {
     }
     setPause(!pause);
   };
+
+  const handleClear = () => {
+    clearTimer();
+    setPause(false);
+  };
   return (
     <>
       <div className="skeleton">
@@ -27,15 +32,17 @@ export default function Home() {
           <Menu />
           <div className="content">
             <div className="content__flex-col">
-              <p className="content__timer">{timer}</p>
+              <div className="content__timer">
+                <p>{timer}</p>
+              </div>
               <div className="content__flex">
-                <div className="content__icon">
+                <div className="content__icon content__events" onClick={handleClear}>
                   <BsArrowRepeat fontSize={30} />
                 </div>
-                <div className="content__start" onClick={handleTimer}>
+                <div className="content__start content__events" onClick={handleTimer}>
                   <span>{pause ? "Pause" : "Start"}</span>
                 </div>
-                <div className="content__icon">
+                <div className="content__icon content__events">
                   <GrFormNextLink fontSize={40} />
                 </div>
               </div>
