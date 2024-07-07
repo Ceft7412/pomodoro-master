@@ -25,8 +25,11 @@ export default function Home() {
                   <BsArrowRepeat fontSize={30} />
                 </div>
                 <div className="content__start">
-                  <span onClick={startTimer}>Start</span>
-                  <span onClick={pauseTimer}>Pause</span>
+                  {pause ? (
+                    <span onClick={startTimer}>Start</span>
+                  ) : (
+                    <span onClick={pauseTimer}>Pause</span>
+                  )}
                 </div>
                 <div className="content__icon">
                   <GrFormNextLink fontSize={40} />
