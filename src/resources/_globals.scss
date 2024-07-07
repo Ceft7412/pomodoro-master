@@ -19,6 +19,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  .background__settings-icon {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 1000;
+  }
 }
 
 .background::before {
