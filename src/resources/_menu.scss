@@ -1,5 +1,23 @@
 .menu {
   position: absolute;
   top: 10%;
-  
+  z-index: 1000;
+  .menu__flex {
+    display: flex;
+    gap: 20px;
+    .menu__item {
+      padding: 7px 13px;
+
+      transition: background 0.4s;
+      &:hover h1 {
+        color: #f06565;
+      }
+      h1 {
+        font-size: 16px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: 0.4s;
+      }
+    }
+  }
 }
