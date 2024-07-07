@@ -7,10 +7,48 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "DM Sans", "Orbitron", "Roboto", sans-serif;
 }
 
-.skeleton {
+.background {
+  width: 100%;
   height: 100vh;
-  max-width: 1500px;
-  margin: auto;
+  background: linear-gradient(45deg, #d6b6d6, #645264, #514251, #d6b6d6);
+  background-size: 400% 400%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  text-align: center;
+  color: white;
+  font-size: 130px;
+  font-weight: lighter;
+  letter-spacing: 20px;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(255, 192, 203, 0.1) 100%
+  );
+  filter: blur(40px);
+  animation: pulse 5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
