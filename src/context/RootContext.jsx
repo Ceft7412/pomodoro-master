@@ -5,22 +5,24 @@ const RootContext = React.createContext();
 
 const RootProvider = ({ children }) => {
   const [timer, setTimer] = React.useState(1500);
-  let interval = null;
+  let interval = React.useRef(null);
 
   const startTimer = () => {
-    if (interval !== null) {
-      clearInterval(interval);
+    console.log("start");
+    if (interval.current !== null) {
+      clearInterval(interval.current);
     }
 
-    interval = setInterval(() => {
-      setTimer((prevTime) => (prevTime = 1));
+    interval.current = setInterval(() => {
+      setTimer((prevTime) => prevTime - 1);
     }, 1000);
   };
 
   const pauseTimer = () => {
-    if (interval !== null) {
-      clearInterval(interval);
-      interval = null;
+    console.log("pause");
+    if (interval.current !== null) {
+      clearInterval(interval.current);
+      interval.current = null;
     }
   };
   const displayTimer = `${Math.floor(timer / 60)}:${timer % 60 < 10 ? "0" : ""}${
