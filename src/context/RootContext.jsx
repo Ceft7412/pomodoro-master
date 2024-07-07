@@ -5,6 +5,7 @@ const RootContext = React.createContext();
 
 const RootProvider = ({ children }) => {
   const [timer, setTimer] = React.useState(1500);
+  console.log(timer);
   let interval = React.useRef(null);
 
   const startTimer = () => {
