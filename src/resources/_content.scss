@@ -1,16 +1,40 @@
 .content {
   display: flex;
   flex-direction: column;
-  .content__timer {
-    text-align: center;
-    color: white;
-    font-size: 130px;
-    font-weight: lighter;
-    letter-spacing: 20px;
-  }
-  .content__flex {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+  z-index: 999;
+  .content__flex-col {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    height: 50%;
+    gap: 10px;
+    .content__timer {
+      text-align: center;
+      color: white;
+      font-size: 130px;
+      font-weight: lighter;
+      letter-spacing: 20px;
+      margin-top: 80px;
+    }
+    .content__flex {
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+      justify-content: space-between;
+      .content__start {
+        font-size: 25px;
+        letter-spacing: 3px;
+        transition: font-size 0.5s ease, color 0.3s ease;
+        cursor: pointer;
+        &:hover {
+          font-size: 26px;
+          color: #f06565;
+        }
+      }
+    }
   }
 }
