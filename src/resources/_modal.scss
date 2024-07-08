@@ -1,0 +1,17 @@
+.modal-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  .modal {
+    background-color: rgb(226, 222, 198);
+    border-radius: 10px;
+    height: 350px;
+    width: 300px;
+    position: absolute;
+    top: 7%;
+    right: 2%;
+  }
+}
