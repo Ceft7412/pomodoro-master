@@ -31,7 +31,26 @@
 
       .modal__header {
         border-bottom: 1px solid gray;
-        padding: 15px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        .modal__header-title {
+          font-size: 20px;
+        }
+        .modal__header-icon-container {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          padding: 7px;
+          border-radius: 20px;
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+          .modal__header-icon {
+            font-size: 25px;
+          }
+        }
       }
       .modal__body {
         display: flex;
