@@ -99,7 +99,17 @@
                 border-radius: 7px;
                 height: 35px;
                 width: 90px;
+                padding: 5px;
                 margin-bottom: 5px;
+                .modal__item-single-input {
+                  width: 100%;
+                  height: 100%;
+                  background-color: transparent;
+                  outline: none;
+                  border: none;
+                  font-size: 16px;
+                  color: white;
+                }
                 @include response-to(mobile-xl) {
                   width: 100%;
                 }
