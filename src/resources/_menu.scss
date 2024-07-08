@@ -20,6 +20,10 @@
         letter-spacing: 1px;
         cursor: pointer;
         transition: 0.4s;
+        white-space: nowrap;
+        @include response-to(mobile-l) {
+          font-size: 14px;
+        }
       }
     }
   }
