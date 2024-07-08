@@ -11,6 +11,8 @@ export default function Modal() {
       setModal(false);
     }
   };
+
+    
   return (
     <>
       <div
