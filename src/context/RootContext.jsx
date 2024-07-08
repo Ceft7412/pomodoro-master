@@ -61,9 +61,23 @@ const RootProvider = ({ children }) => {
     if (active.shortbreak) setTimer(shortBreakTimer);
     if (active.longbreak) setTimer(longBreakTimer);
   };
-  const displayTimer = `${Math.floor(timer / 60) < 10 ? "0" : ""}${Math.floor(
-    timer / 60
-  )}:${timer % 60 < 10 ? "0" : ""}${timer % 60}`;
+  const displayTimer = () => {
+    let hours = Math.floor(timer / 3600);
+    let minutes = Math.floor((timer % 3600) / 60);
+    let seconds = timer % 60;
+
+    // Format time as 2-digit numbers
+    hours = hours < 10 ? "0" + hours : hours;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    // Display hours if timer is greater than 59 minutes
+    if (timer > 3599) {
+      return `${hours}:${minutes}:${seconds}`;
+    } else {
+      return `${minutes}:${seconds}`;
+    }
+  };
 
   const handleClick = (newState) => {
     setPause(false);
@@ -102,13 +116,13 @@ const RootProvider = ({ children }) => {
       value={{
         active,
         pause,
-        pomodoroTimer,
-        shortBreakTimer,
-        longBreakTimer,
+        pomodoroTimer: pomodoroTimer / 60,
+        shortBreakTimer: shortBreakTimer / 60,
+        longBreakTimer: longBreakTimer / 60,
         modal,
         timerStarted,
         activeTimerType,
-        timer: displayTimer,
+        timer: displayTimer(),
         setModal,
         setTimer,
         setPause,
