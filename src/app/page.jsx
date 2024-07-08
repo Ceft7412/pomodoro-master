@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Menu from "@/components/Menu";
+import Modal from "@/components/Modal";
 import React from "react";
 import { BsArrowRepeat } from "react-icons/bs";
 import { GrFormNextLink } from "react-icons/gr";
@@ -8,10 +9,22 @@ import { VscSettings } from "react-icons/vsc";
 import { RootContext } from "@/context/RootContext";
 
 export default function Home() {
-  const { timer, startTimer, pauseTimer, clearTimer, active, setActive } =
-    React.useContext(RootContext);
-
-  const [pause, setPause] = React.useState(false);
+  const {
+    timer,
+    setTimer,
+    startTimer,
+    pauseTimer,
+    clearTimer,
+    active,
+    setActive,
+    modal,
+    setModal,
+    pause,
+    setPause,
+    pomodoroTimer,
+    shortBreakTimer,
+    longBreakTimer,
+  } = React.useContext(RootContext);
 
   const handleTimer = () => {
     if (pause === true) {
@@ -29,6 +42,7 @@ export default function Home() {
 
   const handleNext = () => {
     setActive((prevActive) => {
+      setPause(false);
       // Create a new object with all states set to false
       const newStateObject = Object.keys(prevActive).reduce((acc, key) => {
         acc[key] = false;
@@ -47,14 +61,33 @@ export default function Home() {
       // Set the next state to true
       newStateObject[keys[nextIndex]] = true;
 
+      // Set the timer according to the next state
+      const nextState = keys[nextIndex];
+      switch (nextState) {
+        case "pomodoro":
+          setTimer(pomodoroTimer);
+          pauseTimer();
+          break;
+        case "shortbreak":
+          setTimer(shortBreakTimer);
+          pauseTimer();
+          break;
+        case "longbreak":
+          setTimer(longBreakTimer);
+          pauseTimer();
+          break;
+        default:
+          break;
+      }
       return newStateObject;
     });
   };
   return (
     <>
       <div className="skeleton">
+        <Modal />
         <div className="background">
-          <div className="background__settings-icon">
+          <div className="background__settings-icon" onClick={() => setModal(!modal)}>
             <VscSettings fontSize={25} />
           </div>
 
@@ -66,13 +99,13 @@ export default function Home() {
               </div>
               <div className="content__flex">
                 <div className="content__icon content__events" onClick={handleClear}>
-                  <BsArrowRepeat fontSize={30} />
+                  <BsArrowRepeat className="clear-icon" />
                 </div>
                 <div className="content__start content__events" onClick={handleTimer}>
                   <span>{pause ? "Pause" : "Start"}</span>
                 </div>
                 <div className="content__icon content__events" onClick={handleNext}>
-                  <GrFormNextLink fontSize={40} />
+                  <GrFormNextLink className="next-icon" />
                 </div>
               </div>
             </div>
