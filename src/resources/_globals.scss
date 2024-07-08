@@ -39,10 +39,17 @@ body {
   align-items: center;
   .background__settings-icon {
     position: absolute;
+    display: flex;
+    align-items: center;
     top: 20px;
     right: 30px;
     cursor: pointer;
-    z-index: 5000;
+    z-index: 1999;
+    padding: 7px;
+    border-radius: 20px;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   }
 }
 
