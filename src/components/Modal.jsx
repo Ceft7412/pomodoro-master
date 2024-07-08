@@ -56,58 +56,76 @@ export default function Modal() {
         >
           <div className="modal__flex">
             {/* Item timer */}
-            <div className="modal__item">
-              <h1 className="modal__item-title">Timer</h1>
-              <div className="modal__item-inputs">
-                <div className="modal__item-inputs-box"></div>
-                <div className="modal__item-inputs-box"></div>
-                <div className="modal__item-inputs-box"></div>
-              </div>
+            <div className="modal__header">
+              <span className="modal__header-title">Settings</span>
+              <div className="modal__header-icon"></div>
             </div>
-
-            {/* Item background */}
-            <div className="modal__item">
-              <h1 className="modal__item-title">Background</h1>
-              <div className="modal__item-input">
-                <div
-                  className="modal__item-box"
-                  onClick={() => handleBoxAppear(1)}
-                  ref={containerRef}
-                >
-                  <span className="modal__item-text">Background Image</span>
-                  <div className="modal__item-icon-container">
-                    <HiChevronDown className="modal__item-icon" />
+            <div className="modal__body">
+              <div className="modal__item">
+                <h1 className="modal__item-title">Timer</h1>
+                <div className="modal__item-inputs">
+                  <div className="modal__item-inputs-box-container">
+                    <span className="modal__item-inputs-box-title">Pomodoro</span>
+                    <div className="modal__item-inputs-box"></div>
+                    <span className="modal__item-inputs-box-minutes">minutes</span>
+                  </div>
+                  <div className="modal__item-inputs-box-container">
+                    <span className="modal__item-inputs-box-title">Short-break</span>
+                    <div className="modal__item-inputs-box"></div>
+                    <span className="modal__item-inputs-box-minutes">minutes</span>
+                  </div>
+                  <div className="modal__item-inputs-box-container">
+                    <span className="modal__item-inputs-box-title">Long-break</span>
+                    <div className="modal__item-inputs-box"></div>
+                    <span className="modal__item-inputs-box-minutes">minutes</span>
                   </div>
                 </div>
-                <div
-                  className={`modal__item-appear ${
-                    box === 1 && appear === true ? "modal__item-appear-open" : ""
-                  }`}
-                  ref={boxRef}
-                ></div>
               </div>
-            </div>
 
-            {/* Item font family */}
-            <div className="modal__item">
-              <h1 className="modal__item-title">Font</h1>
-              <div className="modal__item-input">
-                <div
-                  className="modal__item-box"
-                  onClick={() => handleBoxAppear(2)}
-                  ref={containerRef2}
-                >
-                  <span className="modal__item-text">Font</span>
-                  <div className="modal__item-icon-container">
-                    <HiChevronDown className="modal__item-icon" />
+              {/* Item background */}
+              <div className="modal__item">
+                <h1 className="modal__item-title">Background</h1>
+                <div className="modal__item-input">
+                  <div
+                    className="modal__item-box"
+                    onClick={() => handleBoxAppear(1)}
+                    ref={containerRef}
+                  >
+                    <span className="modal__item-text">Background Image</span>
+                    <div className="modal__item-icon-container">
+                      <HiChevronDown className="modal__item-icon" />
+                    </div>
                   </div>
+                  <div
+                    className={`modal__item-appear ${
+                      box === 1 && appear === true ? "modal__item-appear-open" : ""
+                    }`}
+                    ref={boxRef}
+                  ></div>
                 </div>
-                <div
-                  className={`modal__item-appear ${
-                    box === 2 && appear === true ? "modal__item-appear-open" : ""
-                  }`}
-                  ref={boxRef2}
-                ></div>
+              </div>
+
+              {/* Item font family */}
+              <div className="modal__item">
+                <h1 className="modal__item-title">Font</h1>
+                <div className="modal__item-input">
+                  <div
+                    className="modal__item-box"
+                    onClick={() => handleBoxAppear(2)}
+                    ref={containerRef2}
+                  >
+                    <span className="modal__item-text">Font</span>
+                    <div className="modal__item-icon-container">
+                      <HiChevronDown className="modal__item-icon" />
+                    </div>
+                  </div>
+                  <div
+                    className={`modal__item-appear ${
+                      box === 2 && appear === true ? "modal__item-appear-open" : ""
+                    }`}
+                    ref={boxRef2}
+                  ></div>
+                </div>
               </div>
             </div>
           </div>
