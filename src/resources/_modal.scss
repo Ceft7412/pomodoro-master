@@ -31,18 +31,21 @@
       width: 100%;
       height: 100%;
       display: flex;
+      flex-direction: column;
       padding: 20px 15px;
       .modal__item {
         display: flex;
         width: 100%;
         flex-direction: column;
         gap: 20px;
+        margin-bottom: 20px;
         .modal__item-title {
           font-size: 16px;
         }
         .modal__item-input {
           width: 100%;
           cursor: pointer;
+          position: relative;
           .modal__item-box {
             width: 100%;
             border-radius: 7px;
@@ -61,10 +64,11 @@
             }
           }
           .modal__item-appear {
+            position: absolute;
             height: 50px;
             width: 100%;
             border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.332);
+            background-color: rgba(28, 27, 27, 0.962);
             opacity: 0;
             visibility: hidden;
             transition: height 0.1s ease-out, opacity 0.1s ease-out,
