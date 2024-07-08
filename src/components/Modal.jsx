@@ -3,7 +3,8 @@ import { RootContext } from "@/context/RootContext";
 import { HiChevronDown } from "react-icons/hi";
 
 export default function Modal() {
-  const { modal } = React.useContext(RootContext);
+  const modalState = React.useRef(null);
+  const { modal, setModal } = React.useContext(RootContext);
   return (
     <>
       {modal ? (
