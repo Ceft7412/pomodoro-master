@@ -6,12 +6,47 @@
   bottom: 0;
   z-index: 2000;
   .modal {
-    background-color: rgb(226, 222, 198);
-    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.248);
+    border-radius: 15px;
     height: 350px;
     width: 300px;
     position: absolute;
     top: 7%;
     right: 2%;
+    .modal__flex {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      padding: 20px 15px;
+      .modal__item {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        .modal__item-title {
+          font-size: 16px;
+        }
+        .modal__item-input {
+          width: 100%;
+          .modal__item-box {
+            width: 100%;
+            border-radius: 7px;
+            border: 1px solid white;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            .modal__item-icon-container {
+              display: flex;
+              align-items: center;
+              .modal__item-icon {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
