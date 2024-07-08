@@ -9,13 +9,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Figtree", Arial, Helvetica, sans-serif;
   color: white;
+  background-color: black;
+  background: linear-gradient(45deg, rgba(255, 166, 0, 0.658), #645264, #514251, #d6b6d6);
+  background-size: 400% 400%;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 500;
+    background: radial-gradient(
+      circle at center,
+      transparent 0%,
+      rgba(255, 192, 203, 0.5) 100%
+    );
+    filter: blur(40px);
+    animation: pulse 5s ease-in-out infinite alternate;
+  }
 }
 
 .background {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(45deg, #d6b6d6, #645264, #514251, #d6b6d6);
-  background-size: 400% 400%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,25 +42,8 @@ body {
     top: 20px;
     right: 30px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 5000;
   }
-}
-
-.background::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 500;
-  background: radial-gradient(
-    circle at center,
-    transparent 0%,
-    rgba(255, 192, 203, 0.1) 100%
-  );
-  filter: blur(40px);
-  animation: pulse 5s ease-in-out infinite alternate;
 }
 
 @keyframes pulse {
