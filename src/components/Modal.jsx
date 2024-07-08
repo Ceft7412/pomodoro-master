@@ -55,6 +55,16 @@ export default function Modal() {
           onClick={handleModalClick}
         >
           <div className="modal__flex">
+            {/* Item timer */}
+            <div className="modal__item">
+              <h1 className="modal__item-title">Timer</h1>
+              <div className="modal__item-inputs">
+                <div className="modal__item-inputs-box"></div>
+                <div className="modal__item-inputs-box"></div>
+                <div className="modal__item-inputs-box"></div>
+              </div>
+            </div>
+
             {/* Item background */}
             <div className="modal__item">
               <h1 className="modal__item-title">Background</h1>
