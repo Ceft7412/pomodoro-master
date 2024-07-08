@@ -4,10 +4,9 @@ import React from "react";
 const RootContext = React.createContext();
 
 const RootProvider = ({ children }) => {
-  let pomodoroTimer = 1500;
-  let shortBreakTimer = 300;
-  let longBreakTimer = 900;
-
+  const [pomodoroTimer, setPomodoroTimer] = React.useState(1500);
+  const [shortBreakTimer, setShortBreakTimer] = React.useState(300);
+  const [longBreakTimer, setLongBreakTimer] = React.useState(900);
   const [timer, setTimer] = React.useState(pomodoroTimer);
   const [pause, setPause] = React.useState(false);
   const [modal, setModal] = React.useState(false);
@@ -111,6 +110,7 @@ const RootProvider = ({ children }) => {
         break;
     }
   };
+
   return (
     <RootContext.Provider
       value={{
