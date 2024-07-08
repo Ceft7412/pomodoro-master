@@ -60,6 +60,21 @@
               }
             }
           }
+          .modal__item-appear {
+            height: 50px;
+            width: 100%;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.332);
+            opacity: 0;
+            visibility: hidden;
+            transition: height 0.1s ease-out, opacity 0.1s ease-out,
+              visibility 0.1s ease-out;
+            &.modal__item-appear-open {
+              height: 70px;
+              opacity: 1;
+              visibility: visible;
+            }
+          }
         }
       }
     }
