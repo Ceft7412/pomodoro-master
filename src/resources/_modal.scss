@@ -22,12 +22,13 @@
         display: flex;
         width: 100%;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
         .modal__item-title {
           font-size: 16px;
         }
         .modal__item-input {
           width: 100%;
+          cursor: pointer;
           .modal__item-box {
             width: 100%;
             border-radius: 7px;
