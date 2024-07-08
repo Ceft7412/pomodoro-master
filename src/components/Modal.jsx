@@ -14,7 +14,7 @@ export default function Modal() {
 
   const handleBoxAppear = (box) => {
     if (box === 1) {
-      setBox(1);  
+      setBox(1);
     } else if (box === 2) {
       setBox(2);
     } else if (box === 3) {
@@ -38,7 +38,11 @@ export default function Modal() {
                     <HiChevronDown className="modal__item-icon" />
                   </div>
                 </div>
-                <div className="modal__item-appear"></div>
+                <div
+                  className={`modal__item-appear ${
+                    box === 1 ? "modal__item-appear-open" : ""
+                  }`}
+                ></div>
               </div>
             </div>
           </div>
