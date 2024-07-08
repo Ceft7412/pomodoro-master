@@ -15,6 +15,11 @@ export default function Modal() {
     React.useContext(RootContext);
   const [box, setBox] = React.useState();
   const [appear, setAppear] = React.useState(false);
+
+  const handlePomodoroChange = (event) => {
+    setPomodoroTimer(event.target.value);
+  };
+
   const handleClick = (event) => {
     if (modalState.current && !modalState.current.contains(event.target)) {
       setModal(false);
@@ -78,6 +83,7 @@ export default function Modal() {
                         type="number"
                         className="modal__item-single-input"
                         value={pomodoroTimer}
+                        onChange={handlePomodoroChange}
                       />
                     </div>
                     <span className="modal__item-inputs-box-minutes">minutes</span>
@@ -85,14 +91,22 @@ export default function Modal() {
                   <div className="modal__item-inputs-box-container">
                     <span className="modal__item-inputs-box-title">Short-break</span>
                     <div className="modal__item-inputs-box">
-                      <input type="number" className="modal__item-single-input" />
+                      <input
+                        type="number"
+                        className="modal__item-single-input"
+                        value={shortBreakTimer}
+                      />
                     </div>
                     <span className="modal__item-inputs-box-minutes">minutes</span>
                   </div>
                   <div className="modal__item-inputs-box-container">
                     <span className="modal__item-inputs-box-title">Long-break</span>
                     <div className="modal__item-inputs-box">
-                      <input type="number" className="modal__item-single-input" />
+                      <input
+                        type="number"
+                        className="modal__item-single-input"
+                        value={longBreakTimer}
+                      />
                     </div>
                     <span className="modal__item-inputs-box-minutes">minutes</span>
                   </div>
