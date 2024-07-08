@@ -11,7 +11,7 @@
   }
 
   .modal {
-    background-color: rgba(0, 0, 0, 0.248);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     width: 350px;
     position: absolute;
@@ -21,6 +21,15 @@
     opacity: 0;
     visibility: hidden;
     transition: transform 0.1s ease-out, opacity 0.1s ease-out, visibility 0.1s ease-out;
+    @include response-to(tablet) {
+      background-color: rgba(0, 0, 0, 0.674);
+    }
+    @include response-to(mobile-xl) {
+      width: 300px;
+    }
+    @include response-to(mobile-l) {
+      width: 280px;
+    }
     &.modal-open {
       transform: scale(1);
       opacity: 1;
@@ -75,6 +84,9 @@
             display: flex;
             justify-content: space-between;
             gap: 10px;
+            @include response-to(mobile-xl) {
+              flex-direction: column;
+            }
             .modal__item-inputs-box-container {
               display: flex;
               flex-direction: column;
@@ -88,8 +100,12 @@
                 height: 35px;
                 width: 90px;
                 margin-bottom: 5px;
+                @include response-to(mobile-xl) {
+                  width: 100%;
+                }
               }
               .modal__item-inputs-box-minutes {
+                margin-left: 3px;
                 color: rgb(186, 186, 186);
               }
             }
