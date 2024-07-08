@@ -11,7 +11,8 @@ export default function Modal() {
   const boxRef2 = React.useRef(null);
   const containerRef2 = React.useRef(null);
 
-  const { modal, setModal } = React.useContext(RootContext);
+  const { modal, setModal, pomodoroTimer, shortBreakTimer, longBreakTimer } =
+    React.useContext(RootContext);
   const [box, setBox] = React.useState();
   const [appear, setAppear] = React.useState(false);
   const handleClick = (event) => {
@@ -72,17 +73,27 @@ export default function Modal() {
                 <div className="modal__item-inputs">
                   <div className="modal__item-inputs-box-container">
                     <span className="modal__item-inputs-box-title">Pomodoro</span>
-                    <div className="modal__item-inputs-box"></div>
+                    <div className="modal__item-inputs-box">
+                      <input
+                        type="number"
+                        className="modal__item-single-input"
+                        value={pomodoroTimer}
+                      />
+                    </div>
                     <span className="modal__item-inputs-box-minutes">minutes</span>
                   </div>
                   <div className="modal__item-inputs-box-container">
                     <span className="modal__item-inputs-box-title">Short-break</span>
-                    <div className="modal__item-inputs-box"></div>
+                    <div className="modal__item-inputs-box">
+                      <input type="number" className="modal__item-single-input" />
+                    </div>
                     <span className="modal__item-inputs-box-minutes">minutes</span>
                   </div>
                   <div className="modal__item-inputs-box-container">
                     <span className="modal__item-inputs-box-title">Long-break</span>
-                    <div className="modal__item-inputs-box"></div>
+                    <div className="modal__item-inputs-box">
+                      <input type="number" className="modal__item-single-input" />
+                    </div>
                     <span className="modal__item-inputs-box-minutes">minutes</span>
                   </div>
                 </div>
