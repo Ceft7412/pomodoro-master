@@ -13,8 +13,7 @@
   .modal {
     background-color: rgba(0, 0, 0, 0.248);
     border-radius: 15px;
-    height: 350px;
-    width: 300px;
+    width: 350px;
     position: absolute;
     top: 7%;
     right: 2%;
@@ -29,54 +28,91 @@
     }
     .modal__flex {
       width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      padding: 20px 15px;
-      .modal__item {
+
+      .modal__header {
+        border-bottom: 1px solid gray;
+        padding: 15px 15px;
+      }
+      .modal__body {
         display: flex;
-        width: 100%;
+        overflow-y: auto;
         flex-direction: column;
-        gap: 20px;
-        margin-bottom: 20px;
-        .modal__item-title {
-          font-size: 16px;
-        }
-        .modal__item-input {
+        height: 500px;
+        max-height: 500px;
+        padding: 20px 15px;
+        .modal__item {
+          display: flex;
           width: 100%;
-          cursor: pointer;
-          position: relative;
-          .modal__item-box {
-            width: 100%;
-            border-radius: 7px;
-            border: 1px solid white;
-            height: 40px;
+          flex-direction: column;
+          gap: 20px;
+          margin-bottom: 20px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .modal__item-title {
+            font-size: 16px;
+          }
+          .modal__item-inputs {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 10px;
-            .modal__item-icon-container {
+            gap: 10px;
+            .modal__item-inputs-box-container {
               display: flex;
-              align-items: center;
-              .modal__item-icon {
-                font-size: 20px;
+              flex-direction: column;
+              .modal__item-inputs-box-title {
+                font-size: 15px;
+                margin-bottom: 10px;
+              }
+              .modal__item-inputs-box {
+                border: 1px solid white;
+                border-radius: 7px;
+                height: 35px;
+                width: 90px;
+                margin-bottom: 5px;
+              }
+              .modal__item-inputs-box-minutes {
+                color: rgb(186, 186, 186);
               }
             }
           }
-          .modal__item-appear {
-            position: absolute;
-            height: 50px;
+          .modal__item-input {
             width: 100%;
-            border-radius: 5px;
-            background-color: rgba(28, 27, 27, 0.962);
-            opacity: 0;
-            visibility: hidden;
-            transition: height 0.1s ease-out, opacity 0.1s ease-out,
-              visibility 0.1s ease-out;
-            &.modal__item-appear-open {
-              height: 70px;
-              opacity: 1;
-              visibility: visible;
+            cursor: pointer;
+            position: relative;
+            .modal__item-box {
+              width: 100%;
+              border-radius: 7px;
+              border: 1px solid white;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 10px;
+              .modal__item-icon-container {
+                display: flex;
+                align-items: center;
+                .modal__item-icon {
+                  font-size: 20px;
+                }
+              }
+            }
+            .modal__item-appear {
+              position: absolute;
+              height: 50px;
+              width: 100%;
+              z-index: 500;
+              overflow-y: auto;
+              border-radius: 5px;
+              background-color: rgba(28, 27, 27, 0.962);
+              opacity: 0;
+              visibility: hidden;
+              transition: height 0.1s ease-out, opacity 0.1s ease-out,
+                visibility 0.1s ease-out;
+              &.modal__item-appear-open {
+                height: 150px;
+                opacity: 1;
+                visibility: visible;
+              }
             }
           }
         }
