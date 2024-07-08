@@ -1,6 +1,7 @@
 import React from "react";
 import { RootContext } from "@/context/RootContext";
 import { HiChevronDown } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
 
 export default function Modal() {
   const modalState = React.useRef(null);
@@ -58,7 +59,12 @@ export default function Modal() {
             {/* Item timer */}
             <div className="modal__header">
               <span className="modal__header-title">Settings</span>
-              <div className="modal__header-icon"></div>
+              <div
+                className="modal__header-icon-container"
+                onClick={() => setModal(!modal)}
+              >
+                <IoClose className="modal__header-icon" />
+              </div>
             </div>
             <div className="modal__body">
               <div className="modal__item">
