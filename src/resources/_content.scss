@@ -15,14 +15,22 @@
     gap: 10px;
     .content__timer {
       color: white;
+      white-space: nowrap;
       font-size: 130px;
       font-weight: bold;
-      letter-spacing: 5px;
-      margin-top: 80px;
-      font-family: "Roboto Mono", monospace;
+
+      margin-top: 20px;
+      font-family: "Inter";
+      font-feature-settings: "tnum" on, "lnum" on;
       display: flex;
       align-items: center;
       justify-content: center;
+      @include response-to(mobile-xl) {
+        font-size: 110px;
+      }
+      @include response-to(mobile-l) {
+        font-size: 90px;
+      }
     }
     .content__flex {
       display: flex;
@@ -30,16 +38,29 @@
       margin-top: 30px;
       width: 350px;
       justify-content: space-between;
-      .content__events {
-        transition: font-size 0.5s ease, color 0.3s ease;
-        cursor: pointer;
-        &:hover {
-          color: #f06565;
+      @include response-to(mobile-l) {
+        width: 250px;
+      }
+      .content__icon {
+        .clear-icon {
+          font-size: 25px;
+        }
+        .next-icon {
+          font-size: 35px;
+        }
+        &.content__events {
+          transition: font-size 0.5s ease, color 0.3s ease;
+          cursor: pointer;
+          &:hover {
+            color: #f06565;
+          }
         }
       }
+
       .content__start {
         font-size: 25px;
         letter-spacing: 3px;
+        cursor: pointer;
         &:active {
           font-size: 28px;
         }
