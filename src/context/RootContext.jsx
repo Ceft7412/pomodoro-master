@@ -11,6 +11,8 @@ const RootProvider = ({ children }) => {
   const [timer, setTimer] = React.useState(pomodoroTimer);
   const [pause, setPause] = React.useState(false);
   const [modal, setModal] = React.useState(false);
+  const [timerStarted, setTimerStarted] = React.useState(false);
+  const [activeTimerType, setActiveTimerType] = React.useState("pomodoro");
 
   const [active, setActive] = React.useState({
     pomodoro: true,
@@ -21,6 +23,7 @@ const RootProvider = ({ children }) => {
   let interval = React.useRef(null);
 
   const startTimer = () => {
+    setTimerStarted(true);
     interval.current = setInterval(() => {
       setTimer((prevTime) => {
         if (prevTime <= 1) {
@@ -44,6 +47,7 @@ const RootProvider = ({ children }) => {
   };
 
   const pauseTimer = () => {
+    setTimerStarted(false);
     if (interval.current !== null) {
       clearInterval(interval.current);
       interval.current = null;
@@ -72,6 +76,7 @@ const RootProvider = ({ children }) => {
 
       // Set the newState to true
       newStateObject[newState] = true;
+      setActiveTimerType(newState);
 
       return newStateObject;
     });
@@ -101,6 +106,8 @@ const RootProvider = ({ children }) => {
         shortBreakTimer,
         longBreakTimer,
         modal,
+        timerStarted,
+        activeTimerType,
         timer: displayTimer,
         setModal,
         setTimer,
