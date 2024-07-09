@@ -19,7 +19,7 @@
     }
     .content__timer {
       white-space: nowrap;
-
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
       font-weight: 600;
       height: 150px;
       margin-top: 20px;
@@ -51,9 +51,11 @@
       .content__icon {
         .clear-icon {
           font-size: 25px;
+          filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
         }
         .next-icon {
           font-size: 35px;
+          filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
         }
         &.content__events {
           transition: font-size 0.5s ease, color 0.3s ease;
@@ -68,6 +70,7 @@
         font-size: 25px;
         letter-spacing: 3px;
         cursor: pointer;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
         &:active {
           font-size: 28px;
         }
