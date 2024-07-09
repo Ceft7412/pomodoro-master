@@ -16,7 +16,7 @@ export default function Modal() {
   const containerRef2 = React.useRef(null);
   const [boxFont, setBoxFont] = React.useState("Default");
   const [boxBackground, setBoxBackground] = React.useState("Default");
-  
+
   const [box, setBox] = React.useState();
   const [appear, setAppear] = React.useState(false);
   const {
@@ -32,15 +32,18 @@ export default function Modal() {
     font,
     setFont,
     srcBackground,
+    setActiveIndex,
+    activeIndex,
     setBackgroundColor,
     setSrcBackground,
   } = React.useContext(RootContext);
 
-  const handleBackgroundChange = (src, nameBg, txtColor, backgroundColor) => {
+  const handleBackgroundChange = (src, nameBg, txtColor, backgroundColor, id) => {
     setSrcBackground(src);
     setFontColorBackgroundImage(txtColor);
     setBackgroundColor(backgroundColor);
     setBoxBackground(nameBg);
+    setActiveIndex(id);
     setAppear(false);
   };
   const handleFontChange = (className, text) => {
@@ -183,14 +186,15 @@ export default function Modal() {
                       <span
                         key={index}
                         className={`modal__item-font ${
-                          bckgrnd.src === srcBackground ? "active" : ""
+                          bckgrnd.id === activeIndex ? "active" : ""
                         }`}
                         onClick={() =>
                           handleBackgroundChange(
                             bckgrnd.src,
                             bckgrnd.name,
                             bckgrnd.fontColor,
-                            bckgrnd.backgroundColor
+                            bckgrnd.backgroundColor,
+                            bckgrnd.id
                           )
                         }
                       >
