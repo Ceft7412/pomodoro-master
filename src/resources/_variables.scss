@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Kode+Mono:wght@400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=VT323&display=swap");
+
+@font-face {
+  font-family: "Digital 7";
+  src: url("/assets/fonts/digital-7.mono.ttf");
+}
 $breakpoint-mobile-s: 320px;
 $breakpoint-mobile-m: 375px;
 $breakpoint-mobile-l: 425px;
@@ -36,5 +42,88 @@ $breakpoint-desktop: 1440px;
     @media (max-width: #{$breakpoint-desktop}) {
       @content;
     }
+  }
+}
+
+.inter {
+  font-family: "Inter";
+  font-size: 150px;
+  @include response-to(mobile-xl) {
+    font-size: 110px;
+  }
+  @include response-to(mobile-l) {
+    font-size: 90px;
+  }
+}
+.arial {
+  font-family: Arial;
+  font-size: 150px;
+  @include response-to(mobile-xl) {
+    font-size: 110px;
+  }
+  @include response-to(mobile-l) {
+    font-size: 90px;
+  }
+}
+.courier-prime {
+  font-family: "Courier Prime";
+  font-size: 150px;
+  @include response-to(mobile-xl) {
+    font-size: 110px;
+  }
+  @include response-to(mobile-l) {
+    font-size: 90px;
+  }
+}
+.figtree {
+  font-family: "Figtree";
+  font-size: 150px;
+  @include response-to(mobile-xl) {
+    font-size: 110px;
+  }
+  @include response-to(mobile-l) {
+    font-size: 90px;
+  }
+}
+.roboto {
+  font-family: "Roboto Mono";
+  font-size: 150px;
+  @include response-to(mobile-xl) {
+    font-size: 110px;
+  }
+  @include response-to(mobile-l) {
+    font-size: 90px;
+  }
+}
+.vt323 {
+  font-family: "VT323";
+  font-size: 180px;
+  @include response-to(mobile-xl) {
+    font-size: 130px;
+  }
+  @include response-to(mobile-l) {
+    font-size: 110px;
+  }
+}
+.kode-mono {
+  font-family: "Kode Mono";
+  font-size: 150px;
+  @include response-to(mobile-xl) {
+    font-size: 110px;
+  }
+  @include response-to(mobile-l) {
+    font-size: 90px;
+  }
+}
+.digital-7 {
+  font-weight: 550;
+  font-family: "Digital 7";
+  font-size: 180px;
+  
+  @include response-to(mobile-xl) {
+    font-size: 140px;
+  }
+  @include response-to(mobile-l) {
+    font-size: 120px;
   }
 }
