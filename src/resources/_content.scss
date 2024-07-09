@@ -13,19 +13,24 @@
     align-items: center;
     height: 50%;
     gap: 10px;
+    @include response-to(mobile-xl) {
+      height: 100%;
+      padding: 10px 0;
+    }
     .content__timer {
-      color: white;
       white-space: nowrap;
-      font-size: 120px;
+
       font-weight: 600;
+      height: 150px;
       margin-top: 20px;
-      font-family: "Inter";
       font-feature-settings: "tnum" on, "lnum" on;
       display: flex;
       align-items: center;
       justify-content: center;
       @include response-to(mobile-xl) {
+        padding-top: 80px;
         font-size: 110px;
+        flex: 1;
       }
       @include response-to(mobile-l) {
         font-size: 90px;
@@ -37,6 +42,9 @@
       margin-top: 30px;
       width: 350px;
       justify-content: space-between;
+      @include response-to(mobile-xl) {
+        margin-bottom: 50px;
+      }
       @include response-to(mobile-l) {
         width: 250px;
       }
