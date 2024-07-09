@@ -16,40 +16,6 @@ export default function Modal() {
   const containerRef2 = React.useRef(null);
   const [boxFont, setBoxFont] = React.useState("Default");
   const [boxBackground, setBoxBackground] = React.useState("Default");
-  const fonts = [
-    {
-      text: "Default",
-      class: "inter",
-    },
-    {
-      text: "Arial",
-      class: "arial",
-    },
-    {
-      text: "Courier Prime",
-      class: "courier-prime",
-    },
-    {
-      text: "Figtree",
-      class: "figtree",
-    },
-    {
-      text: "Roboto",
-      class: "roboto",
-    },
-    {
-      text: "VT323",
-      class: "vt323",
-    },
-    {
-      text: "Kode Mono",
-      class: "kode-mono",
-    },
-    {
-      text: "Digital 7",
-      class: "digital-7",
-    },
-  ];
 
   const {
     modal,
