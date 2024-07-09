@@ -1,7 +1,7 @@
 "use client";
-import React from "react";
+import React, { createContext } from "react";
 
-const RootContext = React.createContext();
+const RootContext = createContext();
 
 const RootProvider = ({ children }) => {
   const [pomodoroTimer, setPomodoroTimer] = React.useState(1500);
