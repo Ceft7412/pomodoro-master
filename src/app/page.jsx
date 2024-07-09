@@ -32,7 +32,6 @@ export default function Home() {
   } = React.useContext(RootContext);
   const modalInfoRef = React.useRef(null);
   const [modalInfo, setModalInfo] = React.useState(false);
-  console.log(modalInfo);
   React.useEffect(() => {
     const handleBeforeUnload = (e) => {
       e.preventDefault();
