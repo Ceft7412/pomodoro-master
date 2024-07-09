@@ -16,6 +16,7 @@ const RootProvider = ({ children }) => {
   const [srcBackground, setSrcBackground] = React.useState("Default");
   const [backgroundColor, setBackgroundColor] = React.useState("");
   const [fontColorBackgroundImage, setFontColorBackgroundImage] = React.useState("");
+  const [activeIndex, setActiveIndex] = React.useState(null);
   const [active, setActive] = React.useState({
     pomodoro: true,
     shortbreak: false,
@@ -146,8 +147,10 @@ const RootProvider = ({ children }) => {
         timerStarted,
         backgroundColor,
         activeTimerType,
+        activeIndex,
         timer: displayTimer(),
         setBackgroundColor,
+        setActiveIndex,
         setPomodoroTimer,
         setFontColorBackgroundImage,
         setShortBreakTimer,
