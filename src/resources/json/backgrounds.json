@@ -1,0 +1,33 @@
+[
+  {
+    "src": "Default",
+    "name": "Default"
+  },
+  {
+    "src": "",
+    "name": "Pure Black",
+    "backgroundColor": "#000"
+  },
+  {
+    "src": "/assets/images/droplet-1.jpg",
+    "name": "Droplet",
+    "backgroundColor": ""
+  },
+  {
+    "src": "/assets/images/green-1.jpg",
+    "name": "Green Leaves",
+    "backgroundColor": ""
+  },
+  {
+    "src": "/assets/images/rainy-1.jpg",
+    "name": "Mirror Droplets Road",
+    "fontColor": "#000",
+    "backgroundColor": ""
+  },
+  {
+    "src": "/assets/images/sky-1.jpg",
+    "name": "Sunset in the Mountain",
+    "backgroundColor": ""
+  }
+]
+    
