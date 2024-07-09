@@ -2,7 +2,9 @@
   position: absolute;
   top: 10%;
   z-index: 1000;
-
+  @include response-to(mobile-xl) {
+    top: 5%;
+  }
   .menu__flex {
     display: flex;
     gap: 20px;
