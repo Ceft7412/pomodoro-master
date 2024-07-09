@@ -22,5 +22,6 @@
   {
     "text": "VT323",
     "class": "vt323"
-  }
+  },
+  { "text": "Digital 7", "class": "digital-7" }
 ]
