@@ -1,33 +1,118 @@
 [
   {
+    "id": 9438271,
     "src": "Default",
     "name": "Default"
   },
   {
+    "id": 238416729,
     "src": "",
-    "name": "Pure Black",
+    "name": "Black",
     "backgroundColor": "#000"
   },
   {
+    "id": 74029381,
+    "src": "",
+    "name": "White",
+    "backgroundColor": "#fff",
+    "fontColor": "#000"
+  },
+  {
+    "id": 187465302,
+    "src": "",
+    "name": "Sepia",
+    "backgroundColor": "rgb(239, 217, 193)",
+    "fontColor": "#9c6f41"
+  },
+  {
+    "id": 3927401,
+    "src": "/assets/images/anime-3.jpg",
+    "name": "Painting With You",
+    "backgroundColor": ""
+  },
+  {
+    "id": 587429683,
     "src": "/assets/images/droplet-1.jpg",
     "name": "Droplet",
     "backgroundColor": ""
   },
   {
+    "id": 782541903,
+    "src": "/assets/images/anime-7.jpg",
+    "name": "Staring at You",
+    "backgroundColor": ""
+  },
+  {
+    "id": 6029481,
     "src": "/assets/images/green-1.jpg",
     "name": "Green Leaves",
     "backgroundColor": ""
   },
   {
-    "src": "/assets/images/rainy-1.jpg",
-    "name": "Mirror Droplets Road",
-    "fontColor": "#000",
+    "id": 489173042,
+    "src": "/assets/images/anime-2.jpg",
+    "name": "Studying Alone",
     "backgroundColor": ""
   },
   {
+    "id": 32816472,
+    "src": "/assets/images/rainy-1.jpg",
+    "name": "Mirror Droplets Road",
+      "backgroundColor": ""
+  },
+  {
+    "id": 481273095,
+    "src": "/assets/images/anime-5.jpg",
+    "name": "Joyful Swim with Friends",
+
+    "backgroundColor": ""
+  },
+  {
+    "id": 917320548,
     "src": "/assets/images/sky-1.jpg",
     "name": "Sunset in the Mountain",
     "backgroundColor": ""
+  },
+  {
+    "id": 3928401,
+    "src": "/assets/images/anime-6.jpg",
+    "name": "Packing for the Trip",
+    "backgroundColor": ""
+  },
+  {
+    "id": 394857201,
+    "src": "/assets/images/mountain-1.jpg",
+    "name": "Mountain meets the Sea",
+    "backgroundColor": ""
+  },
+  {
+    "id": 17294830,
+    "src": "/assets/images/anime-4.jpg",
+    "name": "Friend",
+    "backgroundColor": ""
+  },
+  {
+    "id": 28409173,
+    "src": "/assets/images/sky-2.jpg",
+    "name": "Field in Spring",
+    "backgroundColor": ""
+  },
+  {
+    "id": 590238416,
+    "src": "/assets/images/anime-1.png",
+    "name": "Dreamy Meadow",
+    "backgroundColor": ""
+  },
+  {
+    "id": 60392817,
+    "src": "/assets/images/anime-8.jpg",
+    "name": "Wondering",
+    "backgroundColor": ""
+  },
+  {
+    "id": 21904835,
+    "src": "/assets/images/anime-9.jpg",
+    "name": "Moonlight",
+    "backgroundColor": ""
   }
 ]
-    
