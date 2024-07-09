@@ -16,8 +16,8 @@
     color: white;
     width: 350px;
     position: absolute;
-    top: 7%;
-    right: 2%;
+    top: 60px;
+    right: 35px;
     transform: scale(0.5);
     opacity: 0;
     visibility: hidden;
@@ -27,6 +27,8 @@
     }
     @include response-to(mobile-xl) {
       width: 300px;
+      top: 45px;
+      right: 15px;
     }
     @include response-to(mobile-l) {
       width: 280px;
@@ -66,7 +68,7 @@
         display: flex;
         overflow-y: auto;
         flex-direction: column;
-        height: 500px;
+
         max-height: 500px;
         padding: 20px 15px;
         .modal__item {
@@ -145,9 +147,9 @@
             .modal__item-appear {
               display: flex;
               flex-direction: column;
-              position: absolute;
+              position: fixed;
               height: 50px;
-              width: 100%;
+              width: 92%;
               z-index: 500;
               overflow-y: auto;
               border-radius: 5px;
@@ -156,6 +158,10 @@
               visibility: hidden;
               transition: height 0.1s ease-out, opacity 0.1s ease-out,
                 visibility 0.1s ease-out;
+              @include response-to(mobile-xl) {
+                position: absolute;
+                width: 100%;
+              }
               &.modal__item-appear-open {
                 height: 150px;
                 opacity: 1;
