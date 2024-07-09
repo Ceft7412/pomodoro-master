@@ -85,15 +85,15 @@ export default function Home() {
       const nextState = keys[nextIndex];
       switch (nextState) {
         case "pomodoro":
-          setTimer(pomodoroTimer);
+          setTimer(pomodoroTimer * 60); // convert minutes to seconds
           pauseTimer();
           break;
         case "shortbreak":
-          setTimer(shortBreakTimer);
+          setTimer(shortBreakTimer * 60); // convert minutes to seconds
           pauseTimer();
           break;
         case "longbreak":
-          setTimer(longBreakTimer);
+          setTimer(longBreakTimer * 60); // convert minutes to seconds
           pauseTimer();
           break;
         default:
