@@ -12,7 +12,12 @@ const RootProvider = ({ children }) => {
   const [modal, setModal] = React.useState(false);
   const [timerStarted, setTimerStarted] = React.useState(false);
   const [activeTimerType, setActiveTimerType] = React.useState("pomodoro");
-
+  const [font, setFont] = React.useState("inter");
+  const [srcBackground, setSrcBackground] = React.useState("Default");
+  const [backgroundColor, setBackgroundColor] = React.useState("");
+  console.log(backgroundColor);
+  const [fontColorBackgroundImage, setFontColorBackgroundImage] = React.useState("");
+  console.log("Srcbg", fontColorBackgroundImage);
   const [active, setActive] = React.useState({
     pomodoro: true,
     shortbreak: false,
@@ -20,6 +25,23 @@ const RootProvider = ({ children }) => {
   });
 
   let interval = React.useRef(null);
+
+  // This will run whenever the three dependencies changes.
+  React.useEffect(() => {
+    if (active.pomodoro) {
+      setTimer(pomodoroTimer);
+      setPause(false);
+      pauseTimer();
+    } else if (active.shortbreak) {
+      setTimer(shortBreakTimer);
+      setPause(false);
+      pauseTimer();
+    } else if (active.longbreak) {
+      setTimer(longBreakTimer);
+      setPause(false);
+      pauseTimer();
+    }
+  }, [pomodoroTimer, shortBreakTimer, longBreakTimer]);
 
   const startTimer = () => {
     setTimerStarted(true);
@@ -120,10 +142,21 @@ const RootProvider = ({ children }) => {
         shortBreakTimer: shortBreakTimer / 60,
         longBreakTimer: longBreakTimer / 60,
         modal,
+        font,
+        srcBackground,
+        fontColorBackgroundImage,
         timerStarted,
+        backgroundColor,
         activeTimerType,
         timer: displayTimer(),
+        setBackgroundColor,
+        setPomodoroTimer,
+        setFontColorBackgroundImage,
+        setShortBreakTimer,
+        setLongBreakTimer,
         setModal,
+        setFont,
+        setSrcBackground,
         setTimer,
         setPause,
         setActive,
