@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
         <head>
           <Title />
         </head>
-        <body className="black">{children}</body>
+        <Body>{children}</Body>
       </html>
     </RootProvider>
   );
@@ -28,4 +28,16 @@ function Title() {
       ? "Short Break"
       : "Long Break";
   return <title>{` ${timerStarted ? timer + " " + timerType : "Study With Me"}`}</title>;
+}
+function Body({ children }) {
+  const { srcBackground, fontColorBackgroundImage, backgroundColor } =
+    React.useContext(RootContext);
+  return (
+    <body
+      style={{ color: fontColorBackgroundImage, backgroundColor: backgroundColor }}
+      className={`${srcBackground === "Default" ? "color-background" : ""}`}
+    >
+      {children}
+    </body>
+  );
 }
