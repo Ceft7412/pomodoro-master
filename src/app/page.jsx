@@ -20,7 +20,10 @@ export default function Home() {
     modal,
     setModal,
     pause,
+    font,
     setPause,
+    srcBackground,
+    backgroundColor,
     pomodoroTimer,
     shortBreakTimer,
     longBreakTimer,
@@ -86,7 +89,16 @@ export default function Home() {
     <>
       <div className="skeleton">
         <Modal />
-        <div className="background">
+        <div className={`background`}>
+          <div
+            className={`background-container ${
+              srcBackground !== "Default" ? "chosen" : ""
+            }`}
+          >
+            {srcBackground ? (
+              <img className="background-container__image" src={srcBackground} />
+            ) : null}
+          </div>
           <div className="background__settings-icon" onClick={() => setModal(!modal)}>
             <VscSettings fontSize={25} />
           </div>
@@ -95,7 +107,7 @@ export default function Home() {
           <div className="content">
             <div className="content__flex-col">
               <div className="content__timer">
-                <p>{timer}</p>
+                <p className={`content__time-inside ${font}`}>{timer}</p>
               </div>
               <div className="content__flex">
                 <div className="content__icon content__events" onClick={handleClear}>
