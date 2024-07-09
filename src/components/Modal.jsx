@@ -16,7 +16,9 @@ export default function Modal() {
   const containerRef2 = React.useRef(null);
   const [boxFont, setBoxFont] = React.useState("Default");
   const [boxBackground, setBoxBackground] = React.useState("Default");
-
+  
+  const [box, setBox] = React.useState();
+  const [appear, setAppear] = React.useState(false);
   const {
     modal,
     setModal,
@@ -33,9 +35,6 @@ export default function Modal() {
     setBackgroundColor,
     setSrcBackground,
   } = React.useContext(RootContext);
-
-  const [box, setBox] = React.useState();
-  const [appear, setAppear] = React.useState(false);
 
   const handleBackgroundChange = (src, nameBg, txtColor, backgroundColor) => {
     setSrcBackground(src);

@@ -15,9 +15,7 @@ const RootProvider = ({ children }) => {
   const [font, setFont] = React.useState("inter");
   const [srcBackground, setSrcBackground] = React.useState("Default");
   const [backgroundColor, setBackgroundColor] = React.useState("");
-  console.log(backgroundColor);
   const [fontColorBackgroundImage, setFontColorBackgroundImage] = React.useState("");
-  console.log("Srcbg", fontColorBackgroundImage);
   const [active, setActive] = React.useState({
     pomodoro: true,
     shortbreak: false,
