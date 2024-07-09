@@ -13,6 +13,7 @@
   .modal {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
+    color: white;
     width: 350px;
     position: absolute;
     top: 7%;
@@ -142,6 +143,8 @@
               }
             }
             .modal__item-appear {
+              display: flex;
+              flex-direction: column;
               position: absolute;
               height: 50px;
               width: 100%;
@@ -157,6 +160,15 @@
                 height: 150px;
                 opacity: 1;
                 visibility: visible;
+              }
+              .modal__item-font {
+                padding: 10px 15px;
+                &:hover {
+                  background-color: black;
+                }
+                &.active {
+                  border-left: 3px solid #f06565;
+                }
               }
             }
           }
