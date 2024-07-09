@@ -3,6 +3,10 @@ import { RootContext } from "@/context/RootContext";
 import { HiChevronDown } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 
+// resources jsons
+import backgrounds from "@/resources/json/backgrounds.json";
+import fonts from "@/resources/json/fonts.json";
+
 export default function Modal() {
   const modalState = React.useRef(null);
 
@@ -10,19 +14,91 @@ export default function Modal() {
   const containerRef = React.useRef(null);
   const boxRef2 = React.useRef(null);
   const containerRef2 = React.useRef(null);
+  const [boxFont, setBoxFont] = React.useState("Default");
+  const [boxBackground, setBoxBackground] = React.useState("Default");
+  const fonts = [
+    {
+      text: "Default",
+      class: "inter",
+    },
+    {
+      text: "Arial",
+      class: "arial",
+    },
+    {
+      text: "Courier Prime",
+      class: "courier-prime",
+    },
+    {
+      text: "Figtree",
+      class: "figtree",
+    },
+    {
+      text: "Roboto",
+      class: "roboto",
+    },
+    {
+      text: "VT323",
+      class: "vt323",
+    },
+    {
+      text: "Kode Mono",
+      class: "kode-mono",
+    },
+    {
+      text: "Digital 7",
+      class: "digital-7",
+    },
+  ];
 
-  const { modal, setModal, pomodoroTimer, shortBreakTimer, longBreakTimer } =
-    React.useContext(RootContext);
+  const {
+    modal,
+    setModal,
+    pomodoroTimer,
+    shortBreakTimer,
+    longBreakTimer,
+    setPomodoroTimer,
+    setShortBreakTimer,
+    setLongBreakTimer,
+    setFontColorBackgroundImage,
+    font,
+    setFont,
+    srcBackground,
+    setBackgroundColor,
+    setSrcBackground,
+  } = React.useContext(RootContext);
+
   const [box, setBox] = React.useState();
   const [appear, setAppear] = React.useState(false);
 
+  const handleBackgroundChange = (src, nameBg, txtColor, backgroundColor) => {
+    setSrcBackground(src);
+    setFontColorBackgroundImage(txtColor);
+    setBackgroundColor(backgroundColor);
+    setBoxBackground(nameBg);
+    setAppear(false);
+  };
+  const handleFontChange = (className, text) => {
+    setFont(className);
+    setBoxFont(text);
+    setAppear(false);
+  };
   const handlePomodoroChange = (event) => {
-    setPomodoroTimer(event.target.value);
+    setPomodoroTimer(event.target.value * 60);
+  };
+
+  const handleShortBreakChange = (event) => {
+    setShortBreakTimer(event.target.value * 60);
+  };
+
+  const handleLongBreakChange = (event) => {
+    setLongBreakTimer(event.target.value * 60);
   };
 
   const handleClick = (event) => {
     if (modalState.current && !modalState.current.contains(event.target)) {
       setModal(false);
+      setAppear(false);
     }
   };
 
@@ -83,6 +159,7 @@ export default function Modal() {
                         type="number"
                         className="modal__item-single-input"
                         value={pomodoroTimer}
+                        min="1"
                         onChange={handlePomodoroChange}
                       />
                     </div>
@@ -95,6 +172,8 @@ export default function Modal() {
                         type="number"
                         className="modal__item-single-input"
                         value={shortBreakTimer}
+                        min="1"
+                        onChange={handleShortBreakChange}
                       />
                     </div>
                     <span className="modal__item-inputs-box-minutes">minutes</span>
@@ -106,6 +185,8 @@ export default function Modal() {
                         type="number"
                         className="modal__item-single-input"
                         value={longBreakTimer}
+                        min="1"
+                        onChange={handleLongBreakChange}
                       />
                     </div>
                     <span className="modal__item-inputs-box-minutes">minutes</span>
@@ -122,7 +203,7 @@ export default function Modal() {
                     onClick={() => handleBoxAppear(1)}
                     ref={containerRef}
                   >
-                    <span className="modal__item-text">Background Image</span>
+                    <span className="modal__item-text">{boxBackground}</span>
                     <div className="modal__item-icon-container">
                       <HiChevronDown className="modal__item-icon" />
                     </div>
@@ -132,20 +213,39 @@ export default function Modal() {
                       box === 1 && appear === true ? "modal__item-appear-open" : ""
                     }`}
                     ref={boxRef}
-                  ></div>
+                  >
+                    {backgrounds.map((bckgrnd, index) => (
+                      <span
+                        key={index}
+                        className={`modal__item-font ${
+                          bckgrnd.src === srcBackground ? "active" : ""
+                        }`}
+                        onClick={() =>
+                          handleBackgroundChange(
+                            bckgrnd.src,
+                            bckgrnd.name,
+                            bckgrnd.fontColor,
+                            bckgrnd.backgroundColor
+                          )
+                        }
+                      >
+                        {bckgrnd.name}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
               {/* Item font family */}
               <div className="modal__item">
-                <h1 className="modal__item-title">Font</h1>
+                <h1 className="modal__item-title">Timer Font</h1>
                 <div className="modal__item-input">
                   <div
                     className="modal__item-box"
                     onClick={() => handleBoxAppear(2)}
                     ref={containerRef2}
                   >
-                    <span className="modal__item-text">Font</span>
+                    <span className="modal__item-text">{boxFont}</span>
                     <div className="modal__item-icon-container">
                       <HiChevronDown className="modal__item-icon" />
                     </div>
@@ -155,7 +255,17 @@ export default function Modal() {
                       box === 2 && appear === true ? "modal__item-appear-open" : ""
                     }`}
                     ref={boxRef2}
-                  ></div>
+                  >
+                    {fonts.map((fnt, index) => (
+                      <span
+                        key={index}
+                        className={`modal__item-font ${fnt === font ? "active" : ""}`}
+                        onClick={() => handleFontChange(fnt.class, fnt.text)}
+                      >
+                        {fnt.text}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
