@@ -5,7 +5,7 @@ import "../resources/styles.scss";
 
 // const inter = Inter({ subsets: ["latin"] });
 import { RootProvider, RootContext } from "@/context/RootContext";
-export const metadata = {
+const metadata = {
   description:
     "Pomodoro master is an app that is easy to use and helps you to focus on your tasks. You can customize the app to your liking. Choose your aesthetic themes without hassle!",
 };
