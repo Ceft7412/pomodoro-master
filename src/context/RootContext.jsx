@@ -50,6 +50,7 @@ const RootProvider = ({ children }) => {
           clearInterval(interval.current);
           interval.current = null;
           pauseTimer();
+          setPause(false);
           if (active.pomodoro) {
             return pomodoroTimer;
           }
